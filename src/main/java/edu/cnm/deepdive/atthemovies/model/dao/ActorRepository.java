@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.UUID;
 import org.springframework.data.repository.CrudRepository;
 
-public interface ActorRepository extends CrudRepository<Actor, UUID>{
-//TODO Declare any required query mehtods.
+public interface ActorRepository extends CrudRepository<Actor, UUID> {
+
   List<Actor> getAllByOrderByName();
 
+  List<Actor> getAllByNameContainsOrderByNameAsc(String nameFragment);
 
 }
